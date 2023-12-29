@@ -1,5 +1,8 @@
 #! /bin/sh
 
+# Screenshot
+flameshot &
+
 # Restore Wallpaper
 nitrogen --restore &
 
