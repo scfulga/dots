@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrainsMono Nerd Font:Regular:pixelsize=16:antialias=true:autohint=true";
+static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -93,42 +93,48 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
+/* bg opacity */
+float alpha = 0.1;
+
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
- /* 8 normal colors */
-   [0] = "#1a1b26", /* black   */
-    [1] = "#f7768e", /* red     */
-    [2] = "#9ece6a", /* green   */
-    [3] = "#e0af68", /* yellow  */
-    [4] = "#2ac3de", /* blue    */
-    [5] = "#bb9af7", /* magenta */
-    [6] = "#7dcfff", /* cyan    */
-    [7] = "#d5d6db", /* white   */
+	/* 8 normal colors */
+	"black",
+	"red3",
+	"green3",
+	"yellow3",
+	"blue2",
+	"magenta3",
+	"cyan3",
+	"gray90",
 
-    /* 8 bright colors */
-    [8]  = "#1a1b26", /* black   */
-    [9]  = "#f7768e", /* red     */
-    [10] = "#9ece6a", /* green   */
-    [11] = "#e0af68", /* yellow  */
-    [12] = "#2ac3de", /* blue    */
-    [13] = "#bb9af7", /* magenta */
-    [14] = "#7dcfff", /* cyan    */
-    [15] = "#cfc9c2", /* white   */
+	/* 8 bright colors */
+	"gray50",
+	"red",
+	"green",
+	"yellow",
+	"#5c5cff",
+	"magenta",
+	"cyan",
+	"white",
 
-    /* special colors */
-    [256] = "#1a1b26", /* background */
-    [257] = "#cfc9c2", /* foreground */
+	[255] = 0,
 
-    "#FBF9FF", /* cursor */
-    "#121213",
-    /* "#191919", /1* background *1/ */
-    "#9395D3", /* rev cursor */
-    "#A2A3BB", /* foreground */
+	/* more colors can be added after 255 to use with DefaultXX */
+	"#cccccc",
+	"#555555",
+	"gray90", /* default foreground colour */
+	"black", /* default background colour */
 };
 
-unsigned int defaultfg = 257;
-unsigned int defaultbg = 256;
-unsigned int defaultcs = 257;
+
+/*
+ * Default colors (colorname index)
+ * foreground, background, cursor, reverse cursor
+ */
+unsigned int defaultfg = 258;
+unsigned int defaultbg = 259;
+unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
 
 /*
@@ -139,9 +145,6 @@ static unsigned int defaultrcs = 257;
  * 7: Snowman ("☃")
  */
 static unsigned int cursorshape = 2;
-unsigned int defaultitalic = 7;
-unsigned int defaultunderline = 7;
-
 
 /*
  * Default columns and rows numbers
@@ -176,8 +179,8 @@ static uint forcemousemod = ShiftMask;
  */
 static MouseShortcut mshortcuts[] = {
 	/* mask                 button   function        argument       release */
-	{ XK_NO_MOD,            Button4, kscrollup,      {.i = 2} },
-	{ XK_NO_MOD,            Button5, kscrolldown,    {.i = 2} },
+	{ ShiftMask,            Button4, kscrollup,      {.i = 1} },
+	{ ShiftMask,            Button5, kscrolldown,    {.i = 1} },
 	{ XK_ANY_MOD,           Button2, selpaste,       {.i = 0},      1 },
 	{ ShiftMask,            Button4, ttysend,        {.s = "\033[5;2~"} },
 	{ XK_ANY_MOD,           Button4, ttysend,        {.s = "\031"} },
@@ -203,7 +206,7 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
-        { ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
+	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
 	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
 };
 
