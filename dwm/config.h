@@ -19,15 +19,6 @@ static void togglefullscreen(const Arg *arg)
 	}
 }
 
-//"Hack Nerd Font:size=14"
-/* appearance */
-static const unsigned int systraypinning = 0;   /* 0: sloppy systray follow
-nitor X */
-static const unsigned int systrayonleft = 0;    /* 0: systray in the right
-t */
-static const unsigned int systrayspacing = 2;   /* systray spacing */
-static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, dis */
-static const int showsystray        = 1;        /* 0 means no systray */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int gappx     = 15;        /* gaps between windows */
