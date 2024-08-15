@@ -1,0 +1,22 @@
+// vim: foldmethod=marker
+[{
+
+"output": ["HDMI-A-1", "DP-1", "HEADLESS-1"],
+"include": "~/.config/waybar/config-global",
+"position": "right", 
+
+"modules-center": [
+                        "hyprland/workspaces", 
+],
+
+
+
+"modules-left": [
+			"clock",
+],
+
+"modules-right": [
+			"cpu",
+			"memory",
+],
+}]

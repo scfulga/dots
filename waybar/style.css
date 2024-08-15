@@ -1,0 +1,112 @@
+*{
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	font-family: "Jetbrains Mono";
+	font-size: 20px;
+	margin: 0px 0px;
+	padding: 0px 0px;
+	text-shadow: none;
+	transition-duration: 0s;
+	transition-property: background-color;
+}
+
+
+
+tooltip {
+	background: rgba(0, 0, 0, 0.8);
+}
+
+tooltip label {
+	color: #faf4ed;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+	margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+	margin-right: 0;
+}
+
+window#waybar {
+	background-color: rgba(0, 0, 0, 0.8);
+	color: #faf4ed;
+}
+
+/* hyprland/workspaces */
+#workspaces {
+}
+
+
+#workspaces button:hover{
+	background-color: rgba(0, 0, 0, 0.8);
+	color: black;
+}
+
+#workspaces button:hover.active{
+	background-color: rgba(0, 0, 0, 0.8);
+	color:black;
+}
+
+#workspaces button:hover{
+	background-color: rgba(0, 0, 0, 0.8);
+	color:black;
+}
+
+#workspaces button{	
+	margin-bottom: 15px;
+	color: #9893a5;
+}
+
+#workspaces button.visible {
+	color: white;
+}
+
+
+
+
+/* hyprland/window */
+#window {
+	padding: 0px 8px;
+}
+
+#window { 
+	margin: 20px 0px;
+}
+
+#tray {
+	padding: 1px 0px;
+}
+
+#tray menu {
+	background-color: #282828;
+	border: 1px solid #a9b665;
+}
+
+#tray * :hover {
+	background-color: #3b4439;
+}
+
+#tray > .needs-attention {
+	background-color: #ea6962;
+}
+
+#cpu {
+	padding: 1px 0px;
+	margin-bottom: 15px;
+}
+
+#memory {
+	padding: 1px 0px;
+	margin-bottom: 10px;
+}
+
+#clock { 
+	font-size: 26px;
+	color: rgba(250, 244, 237, 1);
+	margin-top: 10px;
+
+}

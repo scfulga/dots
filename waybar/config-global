@@ -1,0 +1,39 @@
+// vim: foldmethod=marker
+
+// for all options look in: 
+// https://github.com/Alexays/Waybar/tree/master/man
+// https://github.com/Alexays/Waybar/wiki/
+
+{
+"layer": "top", 
+"spacing": 0,
+"width": 50,
+"margin-right": 5,
+"margin-top": 5,
+"margin-bottom":5,
+
+"fixed-center": false,
+
+"clock": {
+	"format": "{:%H\n%M}",
+	"tooltip": false,
+},	
+
+
+"cpu": {
+	"format": "{usage}%\nCPU",
+        "tooltip": false
+},
+
+
+"memory": {
+  	"format": "{}%\nRAM"
+},
+
+"hyprland/workspaces": {
+	"disable-scroll": true,
+	"disable-click": false,
+},
+
+}
+
