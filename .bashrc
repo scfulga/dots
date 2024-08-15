@@ -1,10 +1,7 @@
 [[ $- != *i* ]] && return
 # bash prompt
-source /usr/share/git/completion/git-prompt.sh
-GIT_BRANCH='$(__git_ps1 " [%s]")'
-export GIT_PS1_SHOWDIRTYSTATE=1
-PS1="\[\e[1m\]\u\[\e[0m\]|\w\[\e[31;1m\]${GIT_BRANCH} \[\e[0;38;5;178m\]\\$ \[\e[0m\]"
-
+eval "$(starship init bash)"
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 # spell check
 shopt -s cdspell
 # scroll through past commands
@@ -25,7 +22,5 @@ alias grep='grep --color=auto'
 alias music="ncmpcpp"
 alias da="yt-dlp --extract-audio --audio-format flac --add-metadata --no-playlist"
 alias dv="yt-dlp -f 'bestvideo[height<=1080]+bestaudio/best[height<=1080]'"
-alias nvmopen="source ~/.nvm/nvm.sh"
-alias img="gpicview"
-alias top="cd ~/Documents/TOP"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+export EDITOR=nvim
